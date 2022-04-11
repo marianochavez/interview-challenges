@@ -1,12 +1,17 @@
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  flex-direction: column;
-  padding: 24px;
+.nes-container {
+	width: 50vh;
+	max-width: 600px;
+	margin: 30px auto;
+	padding: 24px;
+	border-radius: 12px;
+	background-color: #f8f8f8;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 img {
-  image-rendering: pixelated;
+	image-rendering: pixelated;
+}
+
+.img-hide {
+	filter: contrast(0);
 }
