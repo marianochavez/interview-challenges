@@ -11,6 +11,7 @@ function App() {
     errors: 0,
     pokemon: initPokemon,
     isSuccess: false,
+    maxSuccess: 0,
   } as Stats);
   const [formValues, setFormValues] = useState({name: ""} as FormValues);
   const [animate, setAnimate] = useState({img: false, error: false});
@@ -50,6 +51,7 @@ function App() {
       success: res ? stats.success + 1 : stats.success,
       errors: res ? stats.errors : stats.errors + 1,
       isSuccess: res ? true : false,
+      maxSuccess: res ? Math.max(stats.maxSuccess, stats.success + 1) : stats.maxSuccess,
     });
   };
 
@@ -69,6 +71,7 @@ function App() {
     const newPokemon = await getPokemon();
 
     setStats({
+      ...stats,
       success: 0,
       errors: 0,
       pokemon: newPokemon,
@@ -89,8 +92,11 @@ function App() {
     <div className="nes-container with-title is-centered">
       <p className="title">Quíen es este pokemon?</p>
       <section className="icon-list">
+        <i className="nes-icon trophy is-small" />
+        <span> Puntuación Máxima:{stats.maxSuccess}</span>
+        <br />
         <i className="nes-icon coin is-small" />
-        <span> Aciertos:{stats.success}</span>
+        <span> Puntuación:{stats.success}</span>
         <br />
         <i className="nes-icon close is-small" />
         <span> Errores:{stats.errors}</span>

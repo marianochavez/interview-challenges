@@ -9,6 +9,7 @@ export interface Stats {
   errors: number;
   pokemon: Pokemon;
   isSuccess: boolean;
+  maxSuccess: number;
 }
 
 export interface FormValues {
