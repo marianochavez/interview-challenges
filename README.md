@@ -1,6 +1,9 @@
 # Challenges de entrevistas
 En este repositorio se iran subiendo algunos de los challenges que resolvemos en [el stream](https://twitch.tv/goncypozzo).
 
+    ✅ guess-pokemon
+    ✅ simple-cart
+
 ## Entrevistas falsas
 * [Lista de supermercado](./supermarket-list) - [STREAM](https://www.youtube.com/watch?v=ocwsPB1ysOQ)
 * [Búsqueda de productos](./list-search) - [STREAM](https://www.youtube.com/watch?v=SG5FFwLDuSQ)
