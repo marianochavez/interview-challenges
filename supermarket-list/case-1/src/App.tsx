@@ -19,7 +19,22 @@ function App() {
   }
 
   function handleAdd(event: React.ChangeEvent<Form>) {
-    // Should implement
+    event.preventDefault();
+    if (event.target.text.value === "") return;
+
+    const text = event.target.text.value;
+    const lastId = items.at(-1)?.id || 0;
+
+    setItems((items) => [
+      ...items,
+      {
+        id: lastId + 1,
+        text: text,
+        completed: false,
+      },
+    ]);
+
+    event.target["text"].value = "";
   }
 
   function handleRemove(id: Item["id"]) {
