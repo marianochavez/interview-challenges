@@ -3,6 +3,8 @@ En este repositorio se iran subiendo algunos de los challenges que resolvemos en
 
     ✅ guess-pokemon
     ✅ simple-cart
+    ✅ supermarket-list
+    ✅ list-search
 
 ## Entrevistas falsas
 * [Lista de supermercado](./supermarket-list) - [STREAM](https://www.youtube.com/watch?v=ocwsPB1ysOQ)

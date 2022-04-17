@@ -1,10 +1,10 @@
 import type {Product} from "./types";
 
-import {useEffect, useState} from "react";
+import {memo, useEffect, useState} from "react";
 
 import api from "./api";
 
-function Recommended() {
+const Recommended = memo(function Recommended() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -28,15 +28,32 @@ function Recommended() {
       </ul>
     </main>
   );
-}
+});
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [query, setQuery] = useState<string>("");
+  const [favProducts, setFavProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const favProductsStorage = localStorage.getItem("favProd");
+
+    if (favProductsStorage) setFavProducts(JSON.parse(favProductsStorage));
+  }, [setFavProducts]);
+
+  useEffect(() => {
+    localStorage.setItem("favProd", JSON.stringify(favProducts));
+  }, [favProducts]);
 
   useEffect(() => {
     api.search(query).then(setProducts);
   }, [query]);
+
+  const handleFav = (product: Product) => {
+    if (favProducts.includes(product))
+      return setFavProducts(favProducts.filter((prod) => (prod.id === product.id ? null : prod)));
+    setFavProducts([...favProducts, product]);
+  };
 
   return (
     <main>
@@ -44,7 +61,11 @@ function App() {
       <input name="text" placeholder="tv" type="text" onChange={(e) => setQuery(e.target.value)} />
       <ul>
         {products.map((product) => (
-          <li key={product.id}>
+          <li
+            key={product.id}
+            className={`${favProducts.includes(product) && "fav"}`}
+            onClick={() => handleFav(product)}
+          >
             <h4>{product.title}</h4>
             <p>{product.description}</p>
             <span>$ {product.price}</span>
