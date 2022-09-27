@@ -1,15 +1,15 @@
 # Challenges de entrevistas
 En este repositorio se iran subiendo algunos de los challenges que resolvemos en [el stream](https://twitch.tv/goncypozzo).
 - algorithms-4
-- algorithms-5
-- dan-abramov
-- ✅ guess-pokemon
-- ✅ list-search
-- ✅ poke-store
-- ✅ simple-cart
-- ✅ supermarket-list
-- symmetric-masonry
-- wordle
+- [] algorithms-5
+- [] dan-abramov
+- [] guess-pokemon
+- [X] list-search
+- [X] poke-store
+- [X] simple-cart
+- [X] supermarket-list
+- [] symmetric-masonry
+- [] wordle
 
 ## Simluacros de entrevista
 * Lista de supermercado - [CHALLENGE](./supermarket-list) - [STREAM](https://www.youtube.com/watch?v=ocwsPB1ysOQ)
