@@ -4,12 +4,14 @@ type Input = {
 };
 
 type Output = {
-  id: string;
+  id: number;
   nombre: string;
-  edad: string;
+  edad: number;
 };
 
 export default function transformador(input: Input): Output[] {
-  // TODO: implement
-  return [];
+  const result: Output[] = input['nombres'].map(((name, i) => (
+    { id: i+1, nombre: name, edad: input['edades'][i]}  as Output
+  )))
+  return result;
 }

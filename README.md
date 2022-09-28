@@ -1,7 +1,7 @@
 # Challenges de entrevistas
 En este repositorio se iran subiendo algunos de los challenges que resolvemos en [el stream](https://twitch.tv/goncypozzo).
-- algorithms-4
-- algorithms-5
+- [X] algorithms-4
+- [X] algorithms-5
 - dan-abramov
 - [X] guess-pokemon
 - [X] list-search

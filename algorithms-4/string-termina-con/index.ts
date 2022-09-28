@@ -2,6 +2,6 @@ export default function stringTerminaCon(
   string: string,
   final: string
 ): boolean {
-  // TODO: implement
-  return false;
+  const slicedString = string.slice(-final.length)
+  return slicedString === final;
 }
